@@ -1,23 +1,29 @@
+import React, {FC} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
 
-const Header = () => {
+interface HeaderProps {
+  title: string;
+  subTitle: string;
+}
+
+const Header: FC<HeaderProps> = ({title, subTitle}) => {
   return (
-    <View className="bg-white pl-6 pb-6 pt-[30px]">
-      <Text
-        style={{fontFamily: 'Poppins-Medium'}}
-        className="text-[22px] text-[#020202]">
-        Sign In
-      </Text>
-      <Text
-        style={{fontFamily: 'Poppins-Light'}}
-        className="text-[14px] text-[#8d92a3]">
-        Find your ever best meal
-      </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.subTitle}>{subTitle}</Text>
     </View>
   );
 };
 
 export default Header;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+    paddingHorizontal: 24,
+    paddingTop: 30,
+    paddingBottom: 24,
+  },
+  title: {fontSize: 22, fontFamily: 'Poppins-Medium', color: '#020202'},
+  subTitle: {fontSize: 14, fontFamily: 'Poppins-Light', color: '#8d92a3'},
+});

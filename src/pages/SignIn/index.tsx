@@ -1,23 +1,36 @@
-/// <reference types="nativewind/types" />
 import React from 'react';
-import {View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {Button, Gap, TextInput} from '../../components/atoms';
 import {Header} from '../../components/molecules';
 
 const SignIn = () => {
   return (
-    <View className="flex-1">
-      <Header />
-      <View className="bg-white px-6 py-[26px] mt-6 flex-1">
-        <TextInput />
-        <Gap height={25} width={0} />
-        <TextInput />
-        <Gap height={25} width={0} />
-        <Button />
-        <Button />
+    <View style={{flex: 1}}>
+      <Header title="Sign In" subTitle="Find your best ever meal" />
+      <View style={styles.container}>
+        <TextInput label="Email Address" placeHolder="isi yang bener!" />
+        <Gap height={16} />
+        <TextInput
+          label="Password"
+          placeHolder="jangan pakai pasword yang sama melulu!"
+        />
+        <Gap height={24} />
+        <Button text="Sign In" />
+        <Gap height={12} />
+        <Button text="Create New Account" bgColor="grey" textColor="#ffffff" />
       </View>
     </View>
   );
 };
 
 export default SignIn;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+    paddingHorizontal: 24,
+    paddingVertical: 26,
+    marginTop: 24,
+    flex: 1,
+  },
+});

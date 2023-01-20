@@ -1,20 +1,30 @@
-/* eslint-disable react-native/no-inline-styles */
-/// <reference types="nativewind/types" />
 import React from 'react';
-import {Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {Logo} from '../../assets';
+import {Gap} from '../../components';
 
 const SplashScreen = () => {
   return (
-    <View className="bg-[#ffc700] flex-1 justify-center items-center">
-      <Logo className="bg-black" />
-      <Text
-        style={{fontFamily: 'Poppins-Medium'}}
-        className="text-[#020202] text-3xl mt-3">
-        Delicious Food
-      </Text>
+    <View style={styles.container}>
+      <Logo />
+      <Gap height={38} />
+      <Text style={styles.text}>Delicious Food</Text>
     </View>
   );
 };
 
 export default SplashScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#ffc700',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontFamily: 'Poppins-Medium',
+    color: '#020202',
+    fontSize: 32,
+  },
+});
