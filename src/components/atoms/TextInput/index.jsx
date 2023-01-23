@@ -1,16 +1,11 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {StyleSheet, Text, TextInput as TextInputRN, View} from 'react-native';
 
-interface TextInputProps {
-  label: string;
-  placeHolder: string;
-}
-
-const TextInput: FC<TextInputProps> = ({label, placeHolder}) => {
+const TextInput = ({label, placeHolder}) => {
   return (
     <View>
       <Text style={styles.label}>{label}</Text>
-      <TextInputRN style={styles.input} placeholder={placeHolder}></TextInputRN>
+      <TextInputRN style={styles.input} placeholder={placeHolder} />
     </View>
   );
 };

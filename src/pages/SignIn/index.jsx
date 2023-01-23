@@ -5,7 +5,7 @@ import {Header} from '../../components/molecules';
 
 const SignIn = () => {
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.flex}>
       <Header title="Sign In" subTitle="Find your best ever meal" />
       <View style={styles.container}>
         <TextInput label="Email Address" placeHolder="isi yang bener!" />
@@ -17,7 +17,7 @@ const SignIn = () => {
         <Gap height={24} />
         <Button text="Sign In" />
         <Gap height={12} />
-        <Button text="Create New Account" bgColor="grey" textColor="#ffffff" />
+        <Button text="Create New Account" bgColor="grey" textColor="white" />
       </View>
     </View>
   );
@@ -26,6 +26,9 @@ const SignIn = () => {
 export default SignIn;
 
 const styles = StyleSheet.create({
+  flex: {
+    flex: 1,
+  },
   container: {
     backgroundColor: 'white',
     paddingHorizontal: 24,
