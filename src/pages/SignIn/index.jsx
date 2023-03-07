@@ -5,19 +5,24 @@ import {Header} from '../../components/molecules';
 
 const SignIn = ({navigation}) => {
   return (
-    <View style={styles.flex}>
+    <View style={styles.page}>
       <Header title="Sign In" subTitle="Find your best ever meal" />
       <View style={styles.container}>
-        <TextInput label="Email Address" placeHolder="isi yang bener!" />
-        <Gap height={16} />
         <TextInput
-          label="Password"
-          placeHolder="jangan pakai pasword yang sama melulu!"
+          label="Email Address"
+          placeHolder="Type your email address"
         />
+        <Gap height={16} />
+        <TextInput label="Password" placeHolder="Type your Password" />
         <Gap height={24} />
         <Button text="Sign In" />
         <Gap height={12} />
-        <Button text="Create New Account" bgColor="grey" textColor="white" onPress={()=>navigation.navigate('SignUp')} />
+        <Button
+          text="Create New Account"
+          bgColor="grey"
+          textColor="white"
+          onPress={() => navigation.navigate('SignUp')}
+        />
       </View>
     </View>
   );
@@ -26,7 +31,7 @@ const SignIn = ({navigation}) => {
 export default SignIn;
 
 const styles = StyleSheet.create({
-  flex: {
+  page: {
     flex: 1,
   },
   container: {
