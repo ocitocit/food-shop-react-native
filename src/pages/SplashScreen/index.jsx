@@ -13,7 +13,7 @@ const SplashScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Logo />
-      <Gap height={38} />
+      <Gap height={16} />
       <Text style={styles.text}>Delicious Food</Text>
     </View>
   );
@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Poppins-Medium',
     color: '#020202',
-    fontSize: 32,
+    fontSize: 20,
   },
 });

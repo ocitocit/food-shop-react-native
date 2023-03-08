@@ -7,8 +7,16 @@ import {
   SignUpAddress,
   SuccessSignUp,
 } from '../pages';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const MainApp = () => {
+  <Tab.Navigator>
+    <Tab.Screen />
+  </Tab.Navigator>;
+};
 
 const Router = () => {
   return (
