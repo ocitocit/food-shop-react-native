@@ -26,7 +26,8 @@ const SignUp = ({navigation}) => {
         <TextInput label="Password" placeHolder="Type your password" />
         <Gap height={24} />
         <Button
-          text="Continue" onPress={() => navigation.navigate('SignUpAddress')}
+          text="Continue"
+          onPress={() => navigation.navigate('SignUpAddress')}
         />
       </View>
     </View>

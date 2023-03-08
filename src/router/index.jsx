@@ -11,16 +11,19 @@ import {
   Profile,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {BottomNavigator} from '../components';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const MainApp = () => {
-  <Tab.Navigator>
-    <Tab.Screen name="Home" component={Home} />
-    <Tab.Screen name="Order" component={Order} />
-    <Tab.Screen name="Profile" component={Profile} />
-  </Tab.Navigator>;
+  return (
+    <Tab.Navigator tabBar={props => <BottomNavigator {...props} />}>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Order" component={Order} />
+      <Tab.Screen name="Profile" component={Profile} />
+    </Tab.Navigator>
+  );
 };
 
 const Router = () => {
@@ -49,6 +52,11 @@ const Router = () => {
       <Stack.Screen
         name="SuccessSignUp"
         component={SuccessSignUp}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="MainApp"
+        component={MainApp}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

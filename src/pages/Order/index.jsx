@@ -3,7 +3,7 @@ import React from 'react';
 
 const Order = () => {
   return (
-    <View>
+    <View style={{backgroundColor: 'yellow', flex: 1}}>
       <Text>Order</Text>
     </View>
   );
