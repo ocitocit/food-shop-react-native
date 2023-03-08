@@ -6,6 +6,9 @@ import {
   SignUp,
   SignUpAddress,
   SuccessSignUp,
+  Home,
+  Order,
+  Profile,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
@@ -14,7 +17,9 @@ const Tab = createBottomTabNavigator();
 
 const MainApp = () => {
   <Tab.Navigator>
-    <Tab.Screen />
+    <Tab.Screen name="Home" component={Home} />
+    <Tab.Screen name="Order" component={Order} />
+    <Tab.Screen name="Profile" component={Profile} />
   </Tab.Navigator>;
 };
 
