@@ -1,9 +1,30 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import {
+  IcHomeOff,
+  IcHomeOn,
+  IcOrderOff,
+  IcOrderOn,
+  IcProfileOff,
+  IcProfileOn,
+} from '../../../assets/Icon';
+
+const Icon = ({label, focus}) => {
+  switch (label) {
+    case 'Home':
+      return focus ? <IcHomeOn /> : <IcHomeOff />;
+    case 'Order':
+      return focus ? <IcOrderOn /> : <IcOrderOff />;
+    case 'Profile':
+      return focus ? <IcProfileOn /> : <IcProfileOff />;
+    default:
+      return <IcOrderOn />;
+  }
+};
 
 const BottomNavigator = ({state, descriptors, navigation}) => {
   return (
-    <View style={{flexDirection: 'row'}}>
+    <View style={styles.container}>
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
         const label =
@@ -43,9 +64,8 @@ const BottomNavigator = ({state, descriptors, navigation}) => {
             accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarTestID}
             onPress={onPress}
-            onLongPress={onLongPress}
-            style={{flex: 1}}>
-            <Text style={{color: isFocused ? '#673ab7' : '#222'}}>{label}</Text>
+            onLongPress={onLongPress}>
+            <Icon label={label} focus={isFocused} />
           </TouchableOpacity>
         );
       })}
@@ -55,4 +75,13 @@ const BottomNavigator = ({state, descriptors, navigation}) => {
 
 export default BottomNavigator;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    paddingTop: 15,
+    paddingBottom: 13,
+    paddingHorizontal: 50,
+    justifyContent: 'space-between',
+  },
+});
