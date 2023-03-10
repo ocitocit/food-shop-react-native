@@ -1,6 +1,7 @@
 import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {ProfileDummy} from '../../assets';
+import {FoodCard} from '../../components';
 
 const Home = () => {
   return (
@@ -11,6 +12,11 @@ const Home = () => {
           <Text style={styles.desc}>Let's get some foods</Text>
         </View>
         <Image source={ProfileDummy} style={styles.profile} />
+      </View>
+      <View>
+        <FoodCard />
+        <FoodCard />
+        <FoodCard />
       </View>
     </View>
   );
